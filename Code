@@ -60,4 +60,34 @@ return array;
 
 console.log(test([5,6,3,7,3,0]));
 
+/*[4]finding the number of each item in an array*/
+
+
+  var obj={};
+function findMostFrequent(array){
+  var uniqueArray = [];
+  for(var i =0;i<array.length;i++){
+    if(uniqueArray.includes(array[i])===false){
+      uniqueArray.push(array[i]);
+    }
+    }
+  
+  for(var k = 0;k<uniqueArray.length;k++){
+    var count =0;
+  
+    for(var j = 0;j<array.length;j++){
+      if (uniqueArray[k]===array[j]){
+        count++;
+      }
+    }
+    obj[uniqueArray[k]+""]=count;
+  }
+
+  return obj;
+}
+
+console.log(findMostFrequent([1,6,7,1,2,4,6,6,7,2,4]));
+
+
+
 
